@@ -4,6 +4,12 @@
 		{ id: 2, name: 'Mary', age: 20, email: 'Mary@example.com' },
 		{ id: 3, name: 'kids', age: 20, email: 'kids@example.com' }
 	];
+
+	function deletePerson(e, id) {
+		peoples = peoples.filter((person) => person.id !== id);
+		console.log(e);
+	}
+	$: console.log(peoples);
 </script>
 
 <main>
@@ -12,6 +18,7 @@
 			<h1>{person.name}</h1>
 			<p>{person.age}</p>
 			<p>{person.email}</p>
+			<button on:click={(e) => deletePerson(e, person.id)}>Delete</button>
 		</div>
 	{:else}
 		<div>
