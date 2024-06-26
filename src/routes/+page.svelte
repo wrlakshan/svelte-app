@@ -1,20 +1,23 @@
 <script>
-	let firstName = 'Rashmika';
-	let lastName = 'Lakshan';
-
-	$: name = `${firstName} ${lastName}`;
-	$: {
-		console.log(firstName);
-		console.log(lastName);
-		console.log(name);
-	}
-	//if value change run the all code block
+	let peoples = [
+		{ id: 1, name: 'John', age: 20, email: 'john@example.com' },
+		{ id: 2, name: 'Mary', age: 20, email: 'Mary@example.com' },
+		{ id: 3, name: 'kids', age: 20, email: 'kids@example.com' }
+	];
 </script>
 
 <main>
-	<h1>{name}</h1>
-	<input type="text" bind:value={firstName} />
-	<input type="text" bind:value={lastName} />
+	{#each peoples as person (person.id)}
+		<div>
+			<h1>{person.name}</h1>
+			<p>{person.age}</p>
+			<p>{person.email}</p>
+		</div>
+	{:else}
+		<div>
+			<h1>No people found</h1>
+		</div>
+	{/each}
 </main>
 
 <style>
@@ -27,7 +30,12 @@
 		font-size: 2rem;
 		color: #178882;
 		text-align: center;
-		margin-top: 4em;
+		margin-top: 2em;
+	}
+
+	p {
+		font-size: 1rem;
+		color: #569e9a;
 	}
 
 	input {
