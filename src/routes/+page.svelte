@@ -1,7 +1,14 @@
 <script>
 	let firstName = 'Rashmika';
 	let lastName = 'Lakshan';
+
 	$: name = `${firstName} ${lastName}`;
+	$: {
+		console.log(firstName);
+		console.log(lastName);
+		console.log(name);
+	}
+	//if value change run the all code block
 </script>
 
 <main>
