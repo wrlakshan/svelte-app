@@ -1,20 +1,19 @@
 <script>
-	let name = 'Rashmika';
-	let num = 1;
-	const handleClick = () => {
-		num = num + 1;
-	};
+	let firstName = 'Rashmika';
+	let lastName = 'Lakshan';
+	$: name = firstName + ' ' + lastName;
 </script>
 
 <main>
-	<h1>Welcome to {name} {num}</h1>
-	<button on:click={handleClick}>update the color</button>
-	<input type="text" bind:value={name} /> //two way data binding
+	<h1>{name}</h1>
+	<input type="text" bind:value={firstName} />
+	<input type="text" bind:value={lastName} />
 </main>
 
 <style>
 	main {
 		text-align: center;
+		padding: 4rem;
 	}
 
 	h1 {
