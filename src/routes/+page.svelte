@@ -9,7 +9,7 @@
 <main>
 	<h1>Welcome to {name} {num}</h1>
 	<button on:click={handleClick}>update the color</button>
-	<input type="text" bind:value={name} />
+	<input type="text" bind:value={name} /> //two way data binding
 </main>
 
 <style>
