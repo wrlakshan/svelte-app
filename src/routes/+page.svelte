@@ -1,7 +1,7 @@
 <script>
 	let firstName = 'Rashmika';
 	let lastName = 'Lakshan';
-	$: name = firstName + ' ' + lastName;
+	$: name = `${firstName} ${lastName}`;
 </script>
 
 <main>
@@ -21,5 +21,15 @@
 		color: #178882;
 		text-align: center;
 		margin-top: 4em;
+	}
+
+	input {
+		margin-bottom: 1rem;
+		width: 50%;
+		padding: 0.5rem;
+		font-size: 1rem;
+		border: 1px solid #6b6464;
+		border-radius: 0.25rem;
+		box-sizing: border-box;
 	}
 </style>
